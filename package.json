@@ -1,0 +1,46 @@
+{
+  "name": "serverless-challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:dornellas13/serverless-challenge.git",
+  "author": "Albert <albert.rocha@r2t.company>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "serverless offline",
+    "start": "webpack --config=webpack.config.js",
+    "build": "node_modules/typescript/bin/tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "mongodb": "^4.1.4"
+  },
+  "devDependencies": {
+    "@serverless/typescript": "^2.52.1",
+    "@types/aws-lambda": "^8.10.82",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.6.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^5.3.1",
+    "aws-sdk": "^2.972.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-import-helpers": "^1.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "jest": "^27.0.6",
+    "json-schema-to-ts": "^1.6.4",
+    "prettier": "^2.3.2",
+    "serverless": "^2.54.0",
+    "serverless-offline": "^8.0.0",
+    "serverless-webpack": "^5.5.1",
+    "ts-jest": "^27.0.5",
+    "ts-loader": "^9.2.5",
+    "tsconfig-paths": "^3.10.1",
+    "tsconfig-paths-webpack-plugin": "^3.5.1",
+    "typescript": "^4.4.4",
+    "webpack": "^5.50.0",
+    "webpack-node-externals": "^3.0.0"
+  }
+}

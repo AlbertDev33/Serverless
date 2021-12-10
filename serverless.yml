@@ -1,0 +1,41 @@
+service: Serverless
+frameworkVersion: "2"
+
+plugins:
+  - serverless-offline
+  - serverless-webpack
+
+custom:
+    webpack:
+      webpackConfig: ./webpack.config.js
+      includeModules: true
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stackName: ServerlessCrud
+
+# you can add statements to the Lambda function's IAM Role here
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "lambda:InvokeFunction"
+        - "lambda:InvokeAsync"
+      Resource: "*"
+
+functions:
+
+  ServerlessCrud:
+    name: ServerlessCrud
+    memorySize: 512
+    timeout: 60
+    runtime: nodejs14.x
+    handler: src/index.handler
+    environment:
+      MONGO_CONNECTION: 
+      DB_NAME: 
+    events:
+      - http:
+          path: /user
+          method: 
+          cors: true
