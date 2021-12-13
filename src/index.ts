@@ -1,9 +1,27 @@
 /* eslint-disable import/no-unresolved */
 import { APIGatewayProxyEvent, Context } from 'aws-lambda';
 
+import { IResponseShape } from '@shared/interfaces/ICreateResponse';
+import { makeResponse } from '@shared/main/makeResponse';
+
+import { createUser } from './create';
+
+const callFunction = {
+  POST: async (event: APIGatewayProxyEvent) => createUser(event),
+};
+
 export const handler = async (
   event: APIGatewayProxyEvent,
   context: Context,
-): Promise<string> => {
-  return 'Hello World';
+): Promise<IResponseShape> => {
+  context.callbackWaitsForEmptyEventLoop = false;
+  let response: IResponseShape;
+
+  try {
+    const user = await callFunction[event.requestContext.httpMethod](event);
+    response = makeResponse().successResponse({ body: user });
+  } catch (err) {
+    response = makeResponse().badRequestResponse({ body: err.message });
+  }
+  return response;
 };
