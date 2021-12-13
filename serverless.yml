@@ -32,8 +32,8 @@ functions:
     runtime: nodejs14.x
     handler: src/index.handler
     environment:
-      MONGO_CONNECTION: 
-      DB_NAME: 
+      MONGO_CONNECTION: 'mongodb://sandbox:3fa1bd88933bb8e1df73360540ba4152@34.239.113.103:27017/sandbox'
+      DB_NAME: sandbox
     events:
       - http:
           path: /user
