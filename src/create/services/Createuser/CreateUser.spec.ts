@@ -1,4 +1,4 @@
-import { ObjectId } from 'bson';
+import { ObjectId } from 'mongodb';
 
 import { User } from '@create/entity/User';
 import { ICreateUserRepository } from '@create/infra/repository/interface/ICreateUserRepository';
@@ -36,7 +36,7 @@ const makeSut = (): ISutTypes => {
 };
 
 describe('Create User', () => {
-  it('Should be able to register a user with valid values', async () => {
+  it('should be able to register a user with valid values', async () => {
     const { sut, createUserRepositoryStub } = makeSut();
 
     const fakeUser = {
