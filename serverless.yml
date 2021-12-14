@@ -37,5 +37,5 @@ functions:
     events:
       - http:
           path: /user
-          method: POST
+          method: PUT
           cors: true

@@ -1,4 +1,3 @@
-import { User } from '@shared/entity/User';
 import { IShapeId } from '@shared/interfaces/IShapeId';
 import { IUserShape } from '@shared/interfaces/IUserShape';
 

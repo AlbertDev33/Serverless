@@ -5,9 +5,11 @@ import { IResponseShape } from '@shared/interfaces/ICreateResponse';
 import { makeResponse } from '@shared/main/makeResponse';
 
 import { createUser } from './create';
+import { updateUser } from './update';
 
 const callFunction = {
   POST: async (event: APIGatewayProxyEvent) => createUser(event),
+  PUT: async (event: APIGatewayProxyEvent) => updateUser(event),
 };
 
 export const handler = async (
