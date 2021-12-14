@@ -1,6 +1,6 @@
 import { Db } from 'mongodb';
 
-import { User } from '@create/entity/User';
+import { User } from '@shared/entity/User';
 import { IDatabaseConnection } from '@shared/interfaces/IDatabaseConnection';
 import { IUserShape } from '@shared/interfaces/IUserShape';
 

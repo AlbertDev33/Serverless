@@ -1,4 +1,4 @@
-import { User } from '@create/entity/User';
+import { User } from '@shared/entity/User';
 import { IUserShape } from '@shared/interfaces/IUserShape';
 
 export interface ICreateUserRepository {

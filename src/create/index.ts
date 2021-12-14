@@ -1,9 +1,9 @@
 /* eslint-disable import/no-unresolved */
 import { APIGatewayProxyEvent } from 'aws-lambda';
 
+import { User } from '@shared/entity/User';
 import { IUserShape } from '@shared/interfaces/IUserShape';
 
-import { User } from './entity/User';
 import { makeCreateUser } from './main/makeCreateUser';
 import { makeValidationRequestBody } from './main/makeValidationRequestBody';
 

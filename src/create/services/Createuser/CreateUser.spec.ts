@@ -1,7 +1,7 @@
 import { ObjectId } from 'mongodb';
 
-import { User } from '@create/entity/User';
 import { ICreateUserRepository } from '@create/infra/repository/interface/ICreateUserRepository';
+import { User } from '@shared/entity/User';
 import { IUserShape } from '@shared/interfaces/IUserShape';
 
 import { CreateUser } from './CreateUser';
