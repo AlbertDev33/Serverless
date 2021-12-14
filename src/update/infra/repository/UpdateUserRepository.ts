@@ -5,6 +5,10 @@ import { IDatabaseConnection } from '@shared/interfaces/IDatabaseConnection';
 
 import { IUpdateUserRepository } from './interface/IUpdateUserRepository';
 
+enum COLLECTION {
+  USERS = 'users',
+}
+
 export class UpdateUserRepository implements IUpdateUserRepository {
   private database: Promise<Db>;
 
@@ -14,7 +18,7 @@ export class UpdateUserRepository implements IUpdateUserRepository {
 
   public async update(user: User): Promise<User> {
     const { value } = await (await this.database)
-      .collection<User>('')
+      .collection<User>(COLLECTION.USERS)
       .findOneAndUpdate(
         {
           _id: user._id,
